@@ -1,0 +1,68 @@
+package com.biz.jdbc.service;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.biz.jdbc.domain.ScoreVO;
+
+public class ScoreJDBCService {
+	
+	
+	protected String jdbcDriver = "oracle.jdbc.driver.OracleDriver";
+	protected String url ="jdbc:oracle:thin:@localhost:1521:xe";
+	protected String userName = "grade";
+	protected String password = "grade";
+	protected Connection dbConn = null;
+	protected PreparedStatement ps = null;
+	
+	protected List<ScoreVO> scoreList = null;
+	
+	public List<ScoreVO> getScoreList(){
+		
+		return this.scoreList;
+		
+	}
+	
+	protected void dbConnection() {
+		
+		try {
+			Class.forName(this.jdbcDriver);
+			
+			dbConn = DriverManager.getConnection(url, userName, password);
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+	public void selectAll() {
+		
+		this.dbConnection();
+		
+		this.scoreList = new ArrayList<ScoreVO>();
+		
+		String sql = "SELECT * FROM tbl_score ";
+		try {
+			ps = dbConn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

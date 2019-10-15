@@ -1,0 +1,30 @@
+package com.biz.jdbc;
+
+public class jdbcEx_01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		System.out.println("Hello Oracle");
+		
+		String jdbcDriver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String userName = "grade";
+		String password = "grade";
+		
+		
+		
+		try {
+			
+			
+			
+			Class.forName(jdbcDriver);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

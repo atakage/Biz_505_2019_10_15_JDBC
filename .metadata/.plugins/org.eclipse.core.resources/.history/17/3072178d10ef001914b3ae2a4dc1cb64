@@ -1,0 +1,5 @@
+package com.biz.jdbc.service;
+
+public class ScoreJDBCService {
+
+}

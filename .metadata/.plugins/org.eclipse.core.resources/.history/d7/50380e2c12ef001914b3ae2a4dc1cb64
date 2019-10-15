@@ -1,0 +1,26 @@
+package com.biz.jdbc.service;
+
+public class DBConstract {
+	
+	public static class DB_INFO{
+		
+		public String jdbcDriver = "oracle.jdbc.driver.OracleDriver";
+		public String URL = "jdbc:oracle:thin@localhost:1521:xe";
+		public String userName = "grade";
+		public String password = "grade";
+		
+		
+		
+	}
+	
+	public static class SCORE {
+		
+		
+		public int S_ID = 1;
+		public int S_STD = 2;
+		public int S_SCORE = 3;
+		public int S_REM = 4;
+		
+	}
+
+}

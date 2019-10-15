@@ -1,0 +1,21 @@
+package com.biz.jdbc.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import com.biz.jdbc.domain.ScoreVO;
+
+public class ScoreJDBCService {
+	
+	
+	String jdbcDriver = "oracle.jdbc.driver.OracleDriver";
+	String url ="jdbc:oracle:thin:@localhost:1521:xe";
+	String userName = "grade";
+	String password = "grade";
+	Connection dbConn = null;
+	PreparedStatement ps = null;
+	
+	List<ScoreVO> scoreList = null;
+
+}

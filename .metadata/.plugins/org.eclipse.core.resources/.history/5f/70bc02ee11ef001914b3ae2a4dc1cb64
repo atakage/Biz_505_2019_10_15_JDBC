@@ -1,0 +1,26 @@
+package com.biz.jdbc.service;
+
+public class DBConstract {
+	
+	public static class DB_INFO{
+		
+		public String jdbcDriver = "";
+		public String URL = "";
+		public String userName = "";
+		public String password = "";
+		
+		
+		
+	}
+	
+	public static class SCORE {
+		
+		
+		public int S_ID = 1;
+		public int S_STD = 2;
+		public int S_SCORE = 3;
+		public int S_REM = 4;
+		
+	}
+
+}
